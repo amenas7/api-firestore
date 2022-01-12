@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <b>Login</b>
+    </div>
+    <div class="card-body">
+      <label style="float: left;"> Email </label>
+      <input class="form-control m-2" type="text" type="email" autocapitalize="off"
+      placeholder="Ingrese su correo" [(ngModel)]="usuario.email" >
+
+      <label style="float: left;"> Password </label>
+      <input class="form-control m-2" type="text" type="password" autocapitalize="off"
+      placeholder="Ingrese su contraseña" [(ngModel)]="usuario.password" >
+
+      <!-- <button class="btn btn-primary btn-block m-2" (click)="ingresar()"> Ingresar </button> -->
+      <button class="btn btn-primary btn-block m-2" (click)="ingresarConGoogle()"> Ingresar con Google</button>
+
+      <hr>
+      <button class="btn btn-info btn-block m-2" (click)="obtenerUsuarioLogeado()">Obtener Usuario Logeado</button>
+      <!-- <hr>
+      <button class="btn btn-danger btn-block m-2" (click)="logout()">Logout</button> -->
+  </div>
+</div>

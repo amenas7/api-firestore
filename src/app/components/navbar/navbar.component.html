@@ -1,0 +1,14 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://cdn.fs.teachablecdn.com/UC6WjqwDT467G1ySBm88"
+    width="30" height="30" class="d-inline-block align-top" alt="">
+    Login con Google
+  </a>
+
+  <a class="navbar-brand" href="#" *ngIf="userLogged | async as user" >
+    <img src="{{ user.photoURL }}"
+    width="30" height="30" class="d-inline-block align-top" alt="">
+    {{ user.email }}
+  </a>
+</nav>
