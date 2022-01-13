@@ -1,4 +1,52 @@
-<div class="container" style="text-align: right;">
+<div class="" style="margin-top: 100px; padding: 50px;">
+  <table class="table">
+    <thead style="background-color: #707070;">
+      <tr style="color: white;text-align: center;">
+        <th scope="col">Estado</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo Electrónico</th>
+        <th scope="col">Roles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of listaDeUsuarios">
+        <th *ngIf="usuario.estado ==1" style="background-color: #D96B2B; cursor: pointer;">
+
+          <a *ngIf="usuario.estado ==1" style="color: white;" (click)="cambiarEstado(usuario.id, usuario)">
+            Activo </a>
+        </th>
+
+        <th *ngIf="usuario.estado == 0" style="background-color: #8C8C8C; cursor: pointer;">
+            <a style="color: white;" (click)="cambiarEstado(usuario.id, usuario)">
+              Inactivo </a>
+        </th>
+
+        <th>  <img width="30" height="30" style="border-radius: 50%;" [src]="usuario.imagen_google"> {{ usuario.nombre }} </th>
+        <th> {{ usuario.email }} </th>
+        <th [formGroup]="rolForm">
+          <!-- <select name="" id="" class="form-control"
+                (ngModelChange)="CambioSelect($event)"
+                >
+              <option *ngFor="let role of ListaDeRoles" [ngValue]="usuario.rol"> {{ role.rol }} </option>
+          </select> -->
+          <select
+              formControlName="role"
+              class="form-control custom-select"
+              style="border: 1px solid #242A33; font-weight : bold">
+                  <option *ngFor="let role of ListaDeRoles"
+                  [value]="role.rol" checked>
+                    {{ role.rol }}
+                  </option>
+          </select>
+      </th>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<div style="margin-top: 50px; text-align: right;">
   <button style="foat: right;" class="btn btn-danger m-2" (click)="logout()">Cerrar Sesión</button>
 </div>
-<p>dashboard works!</p>
+
+
+
